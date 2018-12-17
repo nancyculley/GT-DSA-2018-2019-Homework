@@ -151,42 +151,42 @@ Sub Stocks()
 
     ' Headers: In cell O2 "Greatest % Increase", in cell O3 "Greatest % Decrease", and in cell O4 "Greatest Total volume"
     ' in cell P1 "Ticker" and in cell Q1 "Value"
-        Range("O2").Value = "Greatest % Increase"
-        Range("O3").Value = "Greatest % Decrease"
-        Range("O4").Value = "Greatest Total Volume"
-        Range("P1").Value = "Ticker"
-        Range("Q1").Value = "Value"
+    '    Range("O2").Value = "Greatest % Increase"
+    '    Range("O3").Value = "Greatest % Decrease"
+    '    Range("O4").Value = "Greatest Total Volume"
+    '    Range("P1").Value = "Ticker"
+    '    Range("Q1").Value = "Value"
     
     ' In cell Q2 have the Greatest % increase from column K, with the corresponding ticker in P2
     ' In cell Q3 have the Great % Decrease from column K, with the corresponding ticker in P3
     ' In cell Q4 have the greatest total volume from column L, with the corresponding ticker in P4
-        
-        Max_increase = Application.WorksheetFunction.Max(Range("k:k"))
-        Max_decrease = Application.WorksheetFunction.Min(Range("k:k"))
-        
-        For q = 2 To Lastrow_j
-            If Cells(q, 11).Value = Max_increase Then
-                Range("Q2").Value = Cells(q, 11).Value
-                Range("P2").Value = Cells(q, 9).Value
-            ElseIf Cells(q, 11).Value = Min_increase Then
-                Range("Q3").Value = Cells(q, 11).Value
-                Range("P3").Value = Cells(q, 9).Value
-            End If
-        Next q
-        
-        Max_volume = Application.WorksheetFunction.Max(Range("l:l"))
-        
-        For q2 = 2 To Lastrow_j
-            If Cells(q2, 12).Value = Max_volume Then
-                Range("Q4").Value = Cells(q2, 12).Value
-                Range("P4").Value = Cells(q2, 9).Value
-            End If
-        Next q2
-                
+    '    
+    '    Max_increase = Application.WorksheetFunction.Max(Range("k:k"))
+    '    Min_decrease = Application.WorksheetFunction.Min(Range("k:k"))
+    '    
+    '    For q = 2 To Lastrow_j
+    '        If Cells(q, 11).Value = Max_increase Then
+    '            Range("Q2").Value = Cells(q, 11).Value
+    '            Range("P2").Value = Cells(q, 9).Value
+    '       ElseIf Cells(q, 11).Value = Min_decrease Then
+    '            Range("Q3").Value = Cells(q, 11).Value
+    '            Range("P3").Value = Cells(q, 9).Value
+    '        End If
+    '    Next q
+    '    
+    '    Max_volume = Application.WorksheetFunction.Max(Range("l:l"))
+    '    
+    '    For q2 = 2 To Lastrow_j
+    '        If Cells(q2, 12).Value = Max_volume Then
+    '            Range("Q4").Value = Cells(q2, 12).Value
+    '            Range("P4").Value = Cells(q2, 9).Value
+    '        End If
+    '    Next q2
+    '            
     ' Format columns and set active cell to A1
-        
-        Range("Q2:Q3").Select
-        Selection.NumberFormat = "0.00%"
+    '    
+     '   Range("Q2:Q3").Select
+     '   Selection.NumberFormat = "0.00%"
         Columns("K:K").Select
         Selection.NumberFormat = "0.00%"
         Columns("I:P").Select
