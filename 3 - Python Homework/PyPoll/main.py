@@ -84,10 +84,14 @@ print("------------------------")
 
 # Export
 
-header = ["Votes", "Pct", "Count"]
-row = ["Total", 100.000, total_votes]
+header = ["Votes", "Pct", "Count", "Winner"]
+row = ["Total", 100.000, total_votes, "n/a"]
 for x in candidate_names:
-    rows_data = (candidate_names[index_for_file], pct_of_votes[index_for_file], candidate_num_votes[index_for_file])
+    if x == winner_name:
+        winner_col = "yes"
+    else:
+        winner_col = "no"
+    rows_data = (candidate_names[index_for_file], pct_of_votes[index_for_file], candidate_num_votes[index_for_file], winner_col)
     rows.append(rows_data)
     index_for_file = index_for_file + 1
 
